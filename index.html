@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesan Spesial</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(to bottom,#111,#222);
+    font-family:Arial, sans-serif;
+    color:white;
+    overflow:hidden;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    width:90%;
+    max-width:400px;
+    backdrop-filter: blur(10px);
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    animation:fade 1.5s ease;
+}
+
+h1{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+p{
+    font-size:18px;
+    line-height:1.6;
+}
+
+.from{
+    margin-top:20px;
+    opacity:0.8;
+    font-size:15px;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1 id="untuk">Untuk Kamu ghiana😝</h1>
+
+    <p id="pesan">
+        Jangan menyerah yaa.  
+        Dunia mungkin berat, tetapi kamu hebat karena masih bertahan sampai hari ini.
+      semangat terus atas dunia hari ini karena esok masih ada matahari yang menunggu dirimu tersenyum. 
+      Semangat for you😜🤗. 
+    </p>
+
+    <div class="from" id="dari">
+        Dari seseorang yang peduli kehidupan🌙
+    </div>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+const untuk = params.get("untuk");
+const dari = params.get("dari");
+const pesan = params.get("pesan");
+
+if(untuk){
+    document.getElementById("untuk").innerText = "Untuk " + untuk + "foryou";
+}
+
+if(dari){
+    document.getElementById("dari").innerText = "Dari " + dari;
+}
+
+if(pesan){
+    document.getElementById("pesan").innerText = pesan;
+}
+</script>
+
+</body>
+</html>
